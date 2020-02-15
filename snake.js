@@ -218,13 +218,13 @@ const play = function() {
     }
 
     if ( headCell.x > maxWidth - config.cellSize || headCell.y > maxHeight - config.cellSize || headCell.x < 0 || headCell.y < 0 ) {
-        clearTimeout(playTimeout);
+        clearTimeout(playTimeout); // Game over.
         return;
     }
 
     for (let i = 1; i < snake.cells.length; i++) {
         if ( Math.abs(headCell.x - snake.cells[i].x) < config.cellSize &&  Math.abs(headCell.y - snake.cells[i].y) < config.cellSize ) {
-            clearTimeout(playTimeout)
+            clearTimeout(playTimeout); // Game over.
             return;
         }
     }
